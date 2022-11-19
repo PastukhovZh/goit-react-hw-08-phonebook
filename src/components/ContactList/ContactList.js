@@ -1,8 +1,8 @@
 import { FriendList, FriendItem, Button, Wrap, Item } from "./ContactList.styled"
 import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux";
-import { getContacts, getStatusFilter } from "redux/selectors";
-import { deleteContact } from "redux/operations";
+import { selectContacts, selectStatusFilter } from "redux/contacts/selectors";
+import { deleteContact } from "redux/contacts/operations";
 
 const getVisibleContact = (contacts, statusFilters) => {
     
@@ -16,8 +16,8 @@ const getVisibleContact = (contacts, statusFilters) => {
 
 export const ContactList = () => {
 
-    const contacts = useSelector(getContacts);
-    const statusFilter = useSelector(getStatusFilter);
+    const contacts = useSelector(selectContacts);
+    const statusFilter = useSelector(selectStatusFilter);
     const visibleContacts = getVisibleContact(contacts, statusFilter);
     const dispatch = useDispatch();
     

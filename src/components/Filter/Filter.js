@@ -1,7 +1,7 @@
 import { Input,Label } from "./Filter.styled"
 import PropTypes from "prop-types"
 import { useDispatch } from "react-redux"
-import { findContact } from "redux/filtersSlise"
+import { findContact } from "redux/contacts/filtersSlise"
 
 
 
