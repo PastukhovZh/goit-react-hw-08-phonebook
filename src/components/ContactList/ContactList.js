@@ -24,14 +24,14 @@ export const ContactList = () => {
 
 
         return(<FriendList>
-        {visibleContacts.map(({ id, name, phone }) => 
+        {visibleContacts.map(({ id, name, number }) => 
         {
             const handleDelete = () => dispatch(deleteContact(id));
             return (
             <FriendItem key={id}>
                 <Wrap>
                 <Item>{name}</Item>
-                <Item>{phone}</Item>
+                <Item>{number}</Item>
                 </Wrap>
                 <Button
                     type="button"

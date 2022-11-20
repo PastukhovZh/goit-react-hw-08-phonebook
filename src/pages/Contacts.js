@@ -5,6 +5,8 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
+import { Filter } from 'components/Filter/Filter';
+import { Outlet } from 'react-router-dom';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -21,7 +23,13 @@ export default function Contacts() {
       </Helmet>
       <ContactForm />
       <div>{isLoading && 'Request in progress...'}</div>
-      <ContactList />
+      <Filter/>
+      <ContactList >
+        <Outlet/>
+      </ContactList>
     </>
   );
 }
+
+// qwertyui@rrtyj.nbgfr
+// qwertyui

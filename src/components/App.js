@@ -75,8 +75,10 @@ export const App = () => {
           element={
             <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
-        />
-      </Route>
+          />
+          <Route path="*" element={<HomePage />} />
+        </Route>
+        
     </Routes>
   );
 };
