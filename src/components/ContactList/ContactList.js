@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux";
 import { selectContacts, selectStatusFilter } from "redux/contacts/selectors";
 import { deleteContact } from "redux/contacts/operations";
+import { Text } from "@chakra-ui/react";
 
 const getVisibleContact = (contacts, statusFilters) => {
     
@@ -29,13 +30,14 @@ export const ContactList = () => {
             const handleDelete = () => dispatch(deleteContact(id));
             return (
             <FriendItem key={id}>
-                <Wrap>
+                    <Wrap>
+                        <img width='100px' src='http://cdn.goodhouse.com.ua/images-png/14769/147691.png' alt="empty user"/>
                 <Item>{name}</Item>
                 <Item>{number}</Item>
                 </Wrap>
                 <Button
                     type="button"
-                    onClick={handleDelete}>Delete
+                    onClick={handleDelete}><Text fontSize='large'>Delete</Text>
                 </Button>
                 </FriendItem>
             )}

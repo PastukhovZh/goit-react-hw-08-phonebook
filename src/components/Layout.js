@@ -1,16 +1,19 @@
 import { Outlet } from 'react-router-dom';
-// import { Toaster } from 'react-hot-toast';
 import { AppBar } from './AppBar/AppBar';
 import { Suspense } from 'react';
-
+import { Box } from '@chakra-ui/react';
 export const Layout = () => {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <Box maxW="570px" minH="999px"maxH='1000px' mx="auto" boxShadow='dark-lg' p='6' pl='80px' pr='80px' rounded='md' bg='white'
+    backgroundImage="url('https://img.freepik.com/vector-premium/nueva-version-smartphone-negro-pantalla-blanca-blanco_115464-125.jpg?w=826')"
+      backgroundPosition="center"
+      backgroundSize='200%'
+  backgroundRepeat="no-repeat">
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
       {/* <Toaster position="top-right" reverseOrder={false} /> */}
-    </div>
+    </Box>
   );
 };

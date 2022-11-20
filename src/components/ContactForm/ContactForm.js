@@ -1,3 +1,4 @@
+import { Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/contacts/operations";
@@ -46,9 +47,9 @@ export const ContactForm = () => {
 
     return (
          <>
-         <h1>Phonebook</h1>
+         <Text padding='10px' fontSize='2xl' borderBottom='2mm ridge rgba(211, 220, 50, .6);'>Phonebook</Text>
             <Form onSubmit={handleSubmit}>
-                <Label> Name  
+                <Label> <Text fontSize='large' >Name</Text>  
                     <Input
                         onChange={handleChange}
                         value={name}
@@ -59,7 +60,7 @@ export const ContactForm = () => {
                         required
                     />
                 </Label>
-                <Label> Number
+                <Label> <Text fontSize='large' >Number</Text>
                     <Input
                         onChange={handleChange}
                         value={number}
@@ -70,7 +71,7 @@ export const ContactForm = () => {
                         required
                     />
                 </Label>
-                <Button type="submit">Add friend</Button>
+                <Button type="submit"> <Text fontSize='x-large' >Add friend</Text></Button>
                 
         </Form>
         </>)

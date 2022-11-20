@@ -5,7 +5,8 @@ width: 200px;
 margin-bottom: 20px;
 margin-top: 10px;
 border-color: whitesmoke;
-outline: transparent;
+outline: 1px solid black;
+/* outline: transparent; */
 border-radius: 4px;
 height: 20px;
 :focus{
