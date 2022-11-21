@@ -1,7 +1,8 @@
 import { Text } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operation';
-import { Form,Label,Input,Button } from './RegisterForm.module';
+import { Form, Label, Input, Button } from './RegisterForm.module';
+
 // import css from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
@@ -10,6 +11,7 @@ export const RegisterForm = () => {
   const handleSubmit = e => {
     
     e.preventDefault();
+    console.log(e)
     const form = e.currentTarget;
     dispatch(
       register({
@@ -25,15 +27,23 @@ export const RegisterForm = () => {
     <Form  onSubmit={handleSubmit} autoComplete="off">
       <Label >
         Username
-        <Input type="text" name="name" />
+        <Input type="text" name="name" required />
       </Label>
       <Label >
         Email
-        <Input type="email" name="email" />
+        <Input
+          type="email"
+          name="email"
+          pattern='^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$'
+          title='For exapmple: «zhenya@mail.com»'
+          required/>
       </Label>
       <Label >
         Password
-        <Input type="password" name="password" />
+        <Input type="password" name="password"
+          pattern='[0-9a-zA-Z!@#$%^&*]{7,}'
+          title="Need min 7 symbols."
+          required />
       </Label>
       <Button type="submit"><Text fontSize='x-large'>Register</Text></Button>
     </Form>
